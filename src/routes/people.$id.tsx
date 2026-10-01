@@ -40,7 +40,7 @@ function PersonPage() {
 
   async function pay() {
     const v = Number(amount);
-    if (!v || v <= 0) return toast.error("أدخل مبلغاً صحيحاً");
+    if (!v || v <= 0) { toast.error("أدخل مبلغاً صحيحاً"); return; }
     await addPayment(id, v, note || undefined);
     setAmount(""); setNote("");
     toast.success("تم تسجيل الدفع");

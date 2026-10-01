@@ -50,7 +50,7 @@ function SettingsPage() {
           <h2 className="font-bold">التعرف على الوجه</h2>
           <div>
             <div className="mb-2 flex justify-between text-sm"><span>حد التطابق (أقل = أدق وأصرم)</span><span className="font-bold text-primary">{s.threshold.toFixed(2)}</span></div>
-            <Slider dir="rtl" min={0.3} max={0.7} step={0.01} value={[s.threshold]} onValueChange={([v]) => update({ threshold: v })} />
+            <Slider dir="rtl" min={0.3} max={0.7} step={0.01} value={[s.threshold]} onValueChange={(v) => update({ threshold: v[0] ?? s.threshold })} />
           </div>
           <div className="flex items-center justify-between gap-4 text-sm">
             <span>عدم تكرار تسجيل نفس الشخص خلال (ثانية)</span>
