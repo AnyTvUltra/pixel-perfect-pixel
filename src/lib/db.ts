@@ -4,7 +4,7 @@ export interface Person {
   id?: number;
   code: string;
   name: string;
-  phone?: string;
+  phone?: string | undefined;
   notes?: string;
   photo: string;
   descriptors: number[][];
@@ -18,13 +18,13 @@ export interface Sighting {
   personId: number | null;
   at: number;
   confidence: number;
-  snapshot?: string;
+  snapshot?: string | undefined;
 }
 export interface Payment {
   id?: number;
   personId: number;
   amount: number;
-  note?: string;
+  note?: string | undefined;
   at: number;
 }
 
