@@ -29,7 +29,7 @@ function Payments() {
 
   async function save() {
     const v = Number(amount);
-    if (!pid || !v) return toast.error("اختر الشخص وأدخل المبلغ");
+    if (!pid || !v) { toast.error("اختر الشخص وأدخل المبلغ"); return; }
     await addPayment(Number(pid), v, note || undefined);
     setAmount(""); setNote("");
     toast.success("تم تسجيل الدفع");

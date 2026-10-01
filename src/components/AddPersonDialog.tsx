@@ -23,7 +23,7 @@ export function AddPersonDialog({ open, onOpenChange }: { open: boolean; onOpenC
   }
 
   async function save() {
-    if (!name.trim() || !photos.length) return toast.error("الاسم وصورة واحدة على الأقل مطلوبان");
+    if (!name.trim() || !photos.length) { toast.error("الاسم وصورة واحدة على الأقل مطلوبان"); return; }
     setBusy(true);
     try {
       const descriptors: number[][] = [];
