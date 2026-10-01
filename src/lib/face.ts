@@ -43,7 +43,7 @@ export async function detectAll(video: HTMLVideoElement) {
 function dist(a: number[], b: ArrayLike<number>) {
   let s = 0;
   for (let i = 0; i < a.length; i++) {
-    const d = a[i] - b[i];
+    const d = (a[i] ?? 0) - (b[i] ?? 0);
     s += d * d;
   }
   return Math.sqrt(s);
